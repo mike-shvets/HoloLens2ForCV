@@ -63,6 +63,9 @@ if __name__ == '__main__':
             depth_line = df.readline()
             if not rgb_line or not depth_line:
                 break
+            rgb_line = rgb_line.replace("\\", "/")
+            depth_line = depth_line.replace("\\", "/")
+
             rgb_path = str(pinhole_path / rgb_line.split()[1])
             depth_path = str(pinhole_path / depth_line.split()[1])
 
